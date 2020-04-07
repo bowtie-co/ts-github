@@ -1,6 +1,6 @@
 {
   "name": "@bowtie/ts-github",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ts-github",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
