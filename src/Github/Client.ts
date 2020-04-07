@@ -87,7 +87,7 @@ export class GithubClient implements IGithubClient {
   }
 
   public async user(): Promise<IGithubUser> {
-    return await this.octokit.get('GET /user', {});
+    return await (await this.octokit.users.getAuthenticated()).data;
   }
 
   public async repos(params?: IGithubRepoFilterParams): Promise<IGithubRepo[]> {
