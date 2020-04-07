@@ -51,6 +51,8 @@
   ],
   "typedocOptions": {
     "mode": "file",
-    "out": "docs"
+    "out": "docs",
+    "excludeExternals": true,
+    "excludeNotExported": true
   }
 }
