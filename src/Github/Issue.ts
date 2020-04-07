@@ -16,8 +16,9 @@ export interface IGithubIssue {
   comments: number;
   created_at: string;
   updated_at: string;
-  author_association: string;
   body: string;
+
+  author_association?: string;
 
   labels: IGithubLabel[];
   assignee?: IGithubUser;

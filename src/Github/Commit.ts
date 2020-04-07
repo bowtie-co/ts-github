@@ -1,8 +1,8 @@
 import { IGithubUser, IGithubRepo } from '.';
 
 export interface IGithubCommit {
-  ref: string;
   sha: string;
+  ref?: string;
   url?: string;
   label?: string;
   user?: IGithubUser;

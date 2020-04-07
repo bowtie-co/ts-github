@@ -6,13 +6,16 @@ export interface IGithubRepo {
   full_name: string;
   owner: IGithubUser;
   private: boolean;
-  html_url: string;
-  description: string | null;
-  fork: boolean;
   url: string;
+  html_url: string;
+  default_branch: string;
+  description: string | null;
+
+  collaborators_url: string;
+
+  fork: boolean;
   forks_url: string;
   keys_url: string;
-  collaborators_url: string;
   teams_url: string;
   hooks_url: string;
   issue_events_url: string;
@@ -64,8 +67,7 @@ export interface IGithubRepo {
   forks_count: number;
   mirror_url?: any;
   open_issues_count: number;
-  forks: number;
-  open_issues: number;
-  watchers: number;
-  default_branch: string;
+  forks?: number;
+  open_issues?: number;
+  watchers?: number;
 }

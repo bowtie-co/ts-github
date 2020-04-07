@@ -3,6 +3,7 @@ export * from './types';
 export * from './Branch';
 export * from './Client';
 export * from './Commit';
+export * from './Contents';
 export * from './Issue';
 export * from './Label';
 export * from './Link';

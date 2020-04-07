@@ -13,7 +13,7 @@
     "start": "npm run watch",
     "audit": "npm audit",
     "test": "jest",
-    "tinker": "ts-node tmp/tinker",
+    "tinker": "ts-node src/tinker",
     "pack": "cat bin/pack | bash",
     "ci:audit": "npm audit",
     "ci:install": "npm install",

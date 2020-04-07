@@ -1,5 +1,5 @@
 import { Octokit } from '@octokit/rest';
-import { IGithubRepo, IGithubIssue, IGithubPull, IGithubUser } from '.';
+import { IGithubRepo, IGithubIssue, IGithubPull, IGithubUser, IGithubCommit, IGithubContents } from '.';
 import { IGithubBranch } from './Branch';
 
 export interface IGithubProps {
@@ -50,6 +50,43 @@ export interface IGithubRepoParams extends IGithubParams {
   repo: string;
 }
 
+export interface IGithubRepoPullParams extends IGithubRepoParams {
+  pull_number: number;
+}
+
+export interface IGithubRepoIssueParams extends IGithubRepoParams {
+  issue_number: number;
+}
+
+export interface IGithubRepoBranchParams extends IGithubRepoParams {
+  branch: string;
+}
+
+export interface IGithubRepoContentsParams extends IGithubRepoParams {
+  path: string;
+}
+
+export interface IGithubCreateOrUpdateParams extends IGithubRepoContentsParams {
+  message: string;
+  content: string;
+  // Required for Update
+  sha?: string;
+  branch?: string;
+  author?: {
+    name: string;
+    email;
+  };
+  committer?: {
+    name: string;
+    email;
+  };
+}
+
+export interface IGithubCreateOrUpdateResponse {
+  commit: IGithubCommit;
+  content: IGithubContents;
+}
+
 export interface IGithubClient {
   octokit: Octokit;
   defaultParams?: IGithubParams;
@@ -57,20 +94,20 @@ export interface IGithubClient {
   user: () => Promise<IGithubUser>;
   repo: (params?: IGithubRepoParams) => Promise<IGithubRepo>;
   repos: (params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
-  pull: (params?: IGithubRepoParams) => Promise<IGithubPull>;
+  pull: (params?: IGithubRepoPullParams) => Promise<IGithubPull>;
   pulls: (params?: IGithubRepoParams) => Promise<IGithubPull[]>;
-  issue: (params?: IGithubRepoParams) => Promise<IGithubIssue>;
+  issue: (params?: IGithubRepoIssueParams) => Promise<IGithubIssue>;
   issues: (params?: IGithubRepoParams) => Promise<IGithubIssue[]>;
-  branch: (params?: IGithubRepoParams) => Promise<IGithubBranch>;
+  branch: (params?: IGithubRepoBranchParams) => Promise<IGithubBranch>;
   branches: (params?: IGithubRepoParams) => Promise<IGithubBranch[]>;
-  collaborators: () => Promise<IGithubUser>;
-  contributors: () => Promise<IGithubUser>;
+  collaborators: (params?: IGithubRepoParams) => Promise<IGithubUser>;
+  contributors: (params?: IGithubRepoParams) => Promise<IGithubUser>;
 
-  files: () => Promise<any>;
-  createFile: () => Promise<void>;
-  deleteFile: () => Promise<void>;
-  updateFile: () => Promise<void>;
-  upsertFiles: () => Promise<void>;
+  getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;
+  createOrUpdateFile: (params?: IGithubCreateOrUpdateParams) => Promise<IGithubCreateOrUpdateResponse>;
+  // deleteFile: () => Promise<void>;
+  // updateFile: () => Promise<void>;
+  // upsertFiles: () => Promise<void>;
 
-  _loadPath: (options?: any) => Promise<any>;
+  // _loadPath: (options?: any) => Promise<any>;
 }

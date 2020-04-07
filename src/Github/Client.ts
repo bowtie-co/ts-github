@@ -10,7 +10,14 @@ import {
   IGithubPull,
   IGithubUser,
   IGithubBranch,
+  IGithubContents,
   IGithubRepoParams,
+  IGithubRepoPullParams,
+  IGithubRepoIssueParams,
+  IGithubRepoBranchParams,
+  IGithubRepoContentsParams,
+  IGithubCreateOrUpdateParams,
+  IGithubCreateOrUpdateResponse,
   IGithubRepoFilterParams
 } from '.';
 
@@ -30,6 +37,10 @@ export class GithubClient implements IGithubClient {
     } else {
       this.octokit = new OctokitPlugins();
     }
+  }
+
+  public async get(route: string, params?: IGithubRepoParams): Promise<any> {
+    return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
   }
 
   public async user(): Promise<IGithubUser> {
@@ -56,14 +67,31 @@ export class GithubClient implements IGithubClient {
     return await (await this.octokit.repos.get(params)).data;
   }
 
-  public async pull(params?: IGithubRepoParams): Promise<IGithubPull> {}
-  public async issue(params?: IGithubRepoParams): Promise<IGithubIssue> {}
-  public async branch(params?: IGithubRepoParams): Promise<IGithubBranch> {}
-  public async collaborators(): Promise<IGithubUser> {}
-  public async contributors(): Promise<IGithubUser> {}
+  public async pull(params?: IGithubRepoPullParams): Promise<IGithubPull> {
+    return await (await this.octokit.pulls.get(params)).data;
+  }
+  public async issue(params?: IGithubRepoIssueParams): Promise<IGithubIssue> {
+    return await (await this.octokit.issues.get(params)).data;
+  }
 
-  public async files(): Promise<any> {}
-  public async createFile(): Promise<void> {}
+  public async branch(params?: IGithubRepoBranchParams): Promise<IGithubBranch> {
+    return await (await this.octokit.repos.getBranch(params)).data;
+  }
+  public async collaborators(params?: IGithubRepoParams): Promise<IGithubUser> {
+    return await (await this.octokit.collaborators.get(params)).data;
+  }
+  public async contributors(params?: IGithubRepoParams): Promise<IGithubUser> {
+    return await (await this.octokit.contributors.get(params)).data;
+  }
+
+  public async getContents(params?: IGithubRepoContentsParams): Promise<IGithubContents | IGithubContents[]> {
+    return await (await this.octokit.repos.getContents(params)).data;
+  }
+
+  public async createOrUpdateFile(params?: IGithubCreateOrUpdateParams): Promise<IGithubCreateOrUpdateResponse> {
+    return await (await this.octokit.repos.createOrUpdateFile(params)).data;
+  }
+
   public async deleteFile(): Promise<void> {}
   public async updateFile(): Promise<void> {}
   public async upsertFiles(): Promise<void> {}
