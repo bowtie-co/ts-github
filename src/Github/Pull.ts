@@ -1,4 +1,4 @@
-import { IGithubUser, IGithubLabel, IGithubMilestone, IGithubCommit, IGithubLinks } from '.';
+import { IGithubUser, IGithubLabel, IGithubMilestone, IGithubCommit } from '.';
 
 export interface IGithubPull {
   url: string;
@@ -32,6 +32,4 @@ export interface IGithubPull {
   assignees: IGithubUser[];
   requested_reviewers: IGithubUser[];
   milestone?: IGithubMilestone;
-
-  _links: IGithubLinks;
 }

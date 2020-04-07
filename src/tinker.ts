@@ -28,7 +28,7 @@ const tinkerRepos = async (): Promise<void> => {
 };
 
 const tinkerRepo = async (): Promise<void> => {
-  const repo = await client.octokit.repo(repoParams);
+  const repo = await client.repo(repoParams);
 
   debugData('repo', repo);
 };
@@ -102,25 +102,14 @@ const tinker = async (): Promise<void> => {
   console.log('Tinker start...');
 
   try {
+    await tinkerUser();
     // await tinkerRepos();
-    // await tinkerUser();
-    // await tinkerRepo();
-
+    await tinkerRepo();
+    await tinkerBranches();
+    await tinkerBranch();
+    await tinkerPulls();
+    await tinkerPull();
     await tinkerContents();
-
-    // user: () => Promise<IGithubUser>;
-    // repo: (params?: IGithubRepoParams) => Promise<IGithubRepo>;
-    // repos: (params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
-    // pull: (params?: IGithubRepoPullParams) => Promise<IGithubPull>;
-    // pulls: (params?: IGithubRepoParams) => Promise<IGithubPull[]>;
-    // issue: (params?: IGithubRepoIssueParams) => Promise<IGithubIssue>;
-    // issues: (params?: IGithubRepoParams) => Promise<IGithubIssue[]>;
-    // branch: (params?: IGithubRepoBranchParams) => Promise<IGithubBranch>;
-    // branches: (params?: IGithubRepoParams) => Promise<IGithubBranch[]>;
-    // collaborators: (params?: IGithubRepoParams) => Promise<IGithubUser>;
-    // contributors: (params?: IGithubRepoParams) => Promise<IGithubUser>;
-
-    // files: (params?: IGithubRepoContentsParams) => Promise<any>;
   } catch (err) {
     console.log('Caught Error:', err.message || err);
     console.log(JSON.stringify(err, null, 2));

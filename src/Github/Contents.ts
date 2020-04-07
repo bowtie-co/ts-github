@@ -1,8 +1,6 @@
-import { IGithubCommit, IGithubLinks } from '.';
+import { IGithubCommit } from '.';
 
 export interface IGithubContents extends IGithubCommit {
-  // sha: string;
-
   name: string;
   path: string;
   type: string;
@@ -11,6 +9,4 @@ export interface IGithubContents extends IGithubCommit {
   git_url: string;
   html_url: string;
   download_url: string | null;
-
-  // _links: IGithubLinks;
 }

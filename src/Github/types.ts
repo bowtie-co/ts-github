@@ -66,11 +66,8 @@ export interface IGithubRepoContentsParams extends IGithubRepoParams {
   path: string;
 }
 
-export interface IGithubCreateOrUpdateParams extends IGithubRepoContentsParams {
+export interface IGithubContentsCommitParams extends IGithubRepoContentsParams {
   message: string;
-  content: string;
-  // Required for Update
-  sha?: string;
   branch?: string;
   author?: {
     name: string;
@@ -82,9 +79,18 @@ export interface IGithubCreateOrUpdateParams extends IGithubRepoContentsParams {
   };
 }
 
-export interface IGithubCreateOrUpdateResponse {
+export interface IGithubCreateOrUpdateFileParams extends IGithubContentsCommitParams {
+  // Required for Update
+  content: string;
+}
+
+export interface IGithubDeleteFileParams extends IGithubContentsCommitParams {
+  sha: string;
+}
+
+export interface IGithubCommitResponse {
   commit: IGithubCommit;
-  content: IGithubContents;
+  content: null | IGithubContents;
 }
 
 export interface IGithubClient {
@@ -104,10 +110,6 @@ export interface IGithubClient {
   contributors: (params?: IGithubRepoParams) => Promise<IGithubUser>;
 
   getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;
-  createOrUpdateFile: (params?: IGithubCreateOrUpdateParams) => Promise<IGithubCreateOrUpdateResponse>;
-  // deleteFile: () => Promise<void>;
-  // updateFile: () => Promise<void>;
-  // upsertFiles: () => Promise<void>;
-
-  // _loadPath: (options?: any) => Promise<any>;
+  createOrUpdateFile: (params?: IGithubCreateOrUpdateFileParams) => Promise<IGithubCommitResponse>;
+  deleteFile: (params?: IGithubDeleteFileParams) => Promise<IGithubCommitResponse>;
 }

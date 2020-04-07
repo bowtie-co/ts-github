@@ -11,14 +11,15 @@ import {
   IGithubUser,
   IGithubBranch,
   IGithubContents,
+  IGithubCommitResponse,
   IGithubRepoParams,
   IGithubRepoPullParams,
   IGithubRepoIssueParams,
   IGithubRepoBranchParams,
+  IGithubRepoFilterParams,
+  IGithubDeleteFileParams,
   IGithubRepoContentsParams,
-  IGithubCreateOrUpdateParams,
-  IGithubCreateOrUpdateResponse,
-  IGithubRepoFilterParams
+  IGithubCreateOrUpdateFileParams
 } from '.';
 
 // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/master/docs/pulls/updateBranch.md
@@ -88,13 +89,11 @@ export class GithubClient implements IGithubClient {
     return await (await this.octokit.repos.getContents(params)).data;
   }
 
-  public async createOrUpdateFile(params?: IGithubCreateOrUpdateParams): Promise<IGithubCreateOrUpdateResponse> {
+  public async createOrUpdateFile(params?: IGithubCreateOrUpdateFileParams): Promise<IGithubCommitResponse> {
     return await (await this.octokit.repos.createOrUpdateFile(params)).data;
   }
 
-  public async deleteFile(): Promise<void> {}
-  public async updateFile(): Promise<void> {}
-  public async upsertFiles(): Promise<void> {}
-
-  public async _loadPath(options?: any): Promise<any> {}
+  public async deleteFile(params?: IGithubDeleteFileParams): Promise<IGithubCommitResponse> {
+    return await (await this.octokit.repos.deleteFile(params)).data;
+  }
 }
