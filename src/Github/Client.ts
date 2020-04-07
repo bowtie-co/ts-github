@@ -2,73 +2,19 @@ import { Octokit } from '@octokit/rest';
 import { requestLog } from '@octokit/plugin-request-log';
 import { paginateRest } from '@octokit/plugin-paginate-rest';
 import { restEndpointMethods } from '@octokit/plugin-rest-endpoint-methods';
-import { IGithubRepo, IGithubIssue, IGithubPull, IGithubUser } from '.';
-import { IGithubBranch } from './Branch';
+import {
+  IGithubClient,
+  IGithubProps,
+  IGithubRepo,
+  IGithubIssue,
+  IGithubPull,
+  IGithubUser,
+  IGithubBranch,
+  IGithubRepoParams,
+  IGithubRepoFilterParams
+} from '.';
 
-export interface IGithubProps {
-  token?: string;
-}
-
-export interface IGithubResource {
-  id: number;
-  url: string;
-}
-
-export interface IGithubParams {
-  since?: string;
-  per_page?: number;
-}
-
-export enum GithubRepoVisibility {
-  all = 'all',
-  public = 'public',
-  private = 'private'
-}
-
-export enum GithubRepoType {
-  all = 'all',
-  owner = 'owner',
-  member = 'member',
-  public = 'public',
-  private = 'private'
-}
-
-export enum GithubFilterSort {
-  full_name = 'full_name',
-  created = 'created',
-  updated = 'updated',
-  pushed = 'pushed'
-}
-
-export enum GithubFilterDirection {
-  asc = 'asc',
-  desc = 'desc'
-}
-
-export interface IGithubRepoFilterParams {
-  visibility?: GithubRepoVisibility;
-  affiliation?: string;
-  type?: GithubRepoType;
-  sort?: GithubFilterSort;
-  direction?: GithubFilterDirection;
-}
-
-export interface IGithubRepoParams extends IGithubParams {
-  owner: string;
-  repo: string;
-}
-
-export interface IGithubClient {
-  octokit: Octokit;
-  defaultParams?: IGithubParams;
-
-  user(): Promise<IGithubUser>;
-  repos: (params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
-  pulls: (params?: IGithubRepoParams) => Promise<IGithubPull[]>;
-  issues: (params?: IGithubRepoParams) => Promise<IGithubIssue[]>;
-  branches: (params?: IGithubRepoParams) => Promise<IGithubBranch[]>;
-}
-
+// https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/master/docs/pulls/updateBranch.md
 export class GithubClient implements IGithubClient {
   public octokit: Octokit;
 
@@ -106,7 +52,21 @@ export class GithubClient implements IGithubClient {
     return await this.octokit.paginate('GET /repos/:owner/:repo/branches', params || {});
   }
 
-  public async get(route: string, params?: IGithubRepoParams): Promise<any> {
-    return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
+  public async repo(params?: IGithubRepoParams): Promise<IGithubRepo> {
+    return await (await this.octokit.repos.get(params)).data;
   }
+
+  public async pull(params?: IGithubRepoParams): Promise<IGithubPull> {}
+  public async issue(params?: IGithubRepoParams): Promise<IGithubIssue> {}
+  public async branch(params?: IGithubRepoParams): Promise<IGithubBranch> {}
+  public async collaborators(): Promise<IGithubUser> {}
+  public async contributors(): Promise<IGithubUser> {}
+
+  public async files(): Promise<any> {}
+  public async createFile(): Promise<void> {}
+  public async deleteFile(): Promise<void> {}
+  public async updateFile(): Promise<void> {}
+  public async upsertFiles(): Promise<void> {}
+
+  public async _loadPath(options?: any): Promise<any> {}
 }

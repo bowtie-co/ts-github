@@ -1,3 +1,5 @@
+export * from './types';
+
 export * from './Branch';
 export * from './Client';
 export * from './Commit';
