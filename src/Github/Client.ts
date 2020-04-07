@@ -40,9 +40,9 @@ export class GithubClient implements IGithubClient {
     }
   }
 
-  public async get(route: string, params?: IGithubRepoParams): Promise<any> {
-    return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
-  }
+  // public async get(route: string, params?: IGithubRepoParams): Promise<any> {
+  //   return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
+  // }
 
   public async user(): Promise<IGithubUser> {
     return await (await this.octokit.users.getAuthenticated()).data;
