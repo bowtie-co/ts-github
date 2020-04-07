@@ -71,11 +71,11 @@ export interface IGithubContentsCommitParams extends IGithubRepoContentsParams {
   branch?: string;
   author?: {
     name: string;
-    email;
+    email: string;
   };
   committer?: {
     name: string;
-    email;
+    email: string;
   };
 }
 
