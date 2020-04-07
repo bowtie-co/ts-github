@@ -18,7 +18,7 @@
     "outDir": "dist",
     "declaration": true,
     "strict": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "strictNullChecks": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
