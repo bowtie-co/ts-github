@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IGithubLabel | @bowtie/ts-github</title>
+	<title>IGithubRepoIssueParams | @bowtie/ts-github</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -51,7 +51,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="igithublabel.html">IGithubLabel</a>
+					<a href="igithubrepoissueparams.html">IGithubRepoIssueParams</a>
 				</li>
 			</ul>
 		</div>
@@ -69,12 +69,17 @@
 			</nav>
 		</div>
 		<div class="col-7 offset-3 col-content">
-			<h1>Interface IGithubLabel</h1>
+			<h1>Interface IGithubRepoIssueParams</h1>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IGithubLabel</span>
+						<a href="igithubrepoparams.html" class="tsd-signature-type">IGithubRepoParams</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">IGithubRepoIssueParams</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,13 +89,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#color" class="tsd-kind-icon">color</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#default" class="tsd-kind-icon">default</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#node_id" class="tsd-kind-icon">node_id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithublabel.html#url" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubrepoissueparams.html#issue_number" class="tsd-kind-icon">issue_number</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepoissueparams.html#owner" class="tsd-kind-icon">owner</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepoissueparams.html#per_page" class="tsd-kind-icon">per_page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepoissueparams.html#repo" class="tsd-kind-icon">repo</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepoissueparams.html#since" class="tsd-kind-icon">since</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,72 +102,56 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="color" class="tsd-anchor"></a>
-					<h3>color</h3>
-					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="issue_number" class="tsd-anchor"></a>
+					<h3>issue_<wbr>number</h3>
+					<div class="tsd-signature tsd-kind-icon">issue_<wbr>number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Github/Label.ts:6</li>
+							<li>Defined in Github/types.ts:58</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="default" class="tsd-anchor"></a>
-					<h3>default</h3>
-					<div class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="owner" class="tsd-anchor"></a>
+					<h3>owner</h3>
+					<div class="tsd-signature tsd-kind-icon">owner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="igithubrepoparams.html">IGithubRepoParams</a>.<a href="igithubrepoparams.html#owner">owner</a></p>
 						<ul>
-							<li>Defined in Github/Label.ts:7</li>
+							<li>Defined in Github/types.ts:49</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="description" class="tsd-anchor"></a>
-					<h3>description</h3>
-					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="per_page" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> per_<wbr>page</h3>
+					<div class="tsd-signature tsd-kind-icon">per_<wbr>page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="igithubparams.html">IGithubParams</a>.<a href="igithubparams.html#per_page">per_page</a></p>
 						<ul>
-							<li>Defined in Github/Label.ts:8</li>
+							<li>Defined in Github/types.ts:11</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="repo" class="tsd-anchor"></a>
+					<h3>repo</h3>
+					<div class="tsd-signature tsd-kind-icon">repo<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="igithubrepoparams.html">IGithubRepoParams</a>.<a href="igithubrepoparams.html#repo">repo</a></p>
 						<ul>
-							<li>Defined in Github/Label.ts:2</li>
+							<li>Defined in Github/types.ts:50</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="since" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> since</h3>
+					<div class="tsd-signature tsd-kind-icon">since<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="igithubparams.html">IGithubParams</a>.<a href="igithubparams.html#since">since</a></p>
 						<ul>
-							<li>Defined in Github/Label.ts:5</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="node_id" class="tsd-anchor"></a>
-					<h3>node_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">node_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Github/Label.ts:3</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="url" class="tsd-anchor"></a>
-					<h3>url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Github/Label.ts:4</li>
+							<li>Defined in Github/types.ts:10</li>
 						</ul>
 					</aside>
 				</section>
@@ -177,28 +164,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface root">
-						<a href="igithublabel.html" class="tsd-kind-icon">IGithub<wbr>Label</a>
+						<a href="igithubrepoissueparams.html" class="tsd-kind-icon">IGithub<wbr>Repo<wbr>Issue<wbr>Params</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#color" class="tsd-kind-icon">color</a>
+								<a href="igithubrepoissueparams.html#issue_number" class="tsd-kind-icon">issue_<wbr>number</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#default" class="tsd-kind-icon">default</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubrepoissueparams.html#owner" class="tsd-kind-icon">owner</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#description" class="tsd-kind-icon">description</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubrepoissueparams.html#per_page" class="tsd-kind-icon">per_<wbr>page</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#id" class="tsd-kind-icon">id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubrepoissueparams.html#repo" class="tsd-kind-icon">repo</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#node_id" class="tsd-kind-icon">node_<wbr>id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithublabel.html#url" class="tsd-kind-icon">url</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubrepoissueparams.html#since" class="tsd-kind-icon">since</a>
 							</li>
 						</ul>
 					</li>
