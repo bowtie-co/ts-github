@@ -21,7 +21,7 @@
     "ci:setup": "npm run ci:install && npm run ci:build",
     "ci:test": "npm test",
     "ci:lint": "npm run lint",
-    "preci": "npm run ci:lint",
+    "preci": "npm run ci:setup && npm run ci:lint",
     "ci": "npm run ci:test",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
