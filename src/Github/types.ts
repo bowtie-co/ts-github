@@ -81,6 +81,7 @@ export interface IGithubContentsCommitParams extends IGithubRepoContentsParams {
 
 export interface IGithubCreateOrUpdateFileParams extends IGithubContentsCommitParams {
   // Required for Update
+  sha?: string;
   content: string;
 }
 
@@ -106,8 +107,8 @@ export interface IGithubClient {
   issues: (params?: IGithubRepoParams) => Promise<IGithubIssue[]>;
   branch: (params?: IGithubRepoBranchParams) => Promise<IGithubBranch>;
   branches: (params?: IGithubRepoParams) => Promise<IGithubBranch[]>;
-  collaborators: (params?: IGithubRepoParams) => Promise<IGithubUser>;
-  contributors: (params?: IGithubRepoParams) => Promise<IGithubUser>;
+  collaborators: (params?: IGithubRepoParams) => Promise<IGithubUser[]>;
+  contributors: (params?: IGithubRepoParams) => Promise<IGithubUser[]>;
 
   getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;
   createOrUpdateFile: (params?: IGithubCreateOrUpdateFileParams) => Promise<IGithubCommitResponse>;

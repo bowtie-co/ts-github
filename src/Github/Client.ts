@@ -64,6 +64,14 @@ export class GithubClient implements IGithubClient {
     return await this.octokit.paginate('GET /repos/:owner/:repo/branches', params || {});
   }
 
+  public async collaborators(params?: IGithubRepoParams): Promise<IGithubUser[]> {
+    return await this.octokit.paginate('GET /repos/:owner/:repo/collaborators', params || {});
+  }
+
+  public async contributors(params?: IGithubRepoParams): Promise<IGithubUser[]> {
+    return await this.octokit.paginate('GET /repos/:owner/:repo/contributors', params || {});
+  }
+
   public async repo(params?: IGithubRepoParams): Promise<IGithubRepo> {
     return await (await this.octokit.repos.get(params)).data;
   }
@@ -77,12 +85,6 @@ export class GithubClient implements IGithubClient {
 
   public async branch(params?: IGithubRepoBranchParams): Promise<IGithubBranch> {
     return await (await this.octokit.repos.getBranch(params)).data;
-  }
-  public async collaborators(params?: IGithubRepoParams): Promise<IGithubUser> {
-    return await (await this.octokit.collaborators.get(params)).data;
-  }
-  public async contributors(params?: IGithubRepoParams): Promise<IGithubUser> {
-    return await (await this.octokit.contributors.get(params)).data;
   }
 
   public async getContents(params?: IGithubRepoContentsParams): Promise<IGithubContents | IGithubContents[]> {
