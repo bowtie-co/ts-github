@@ -28,7 +28,7 @@
     "doc": "typedoc --theme ./node_modules/typedoc-neo-theme/bin/default --plugin typedoc-neo-theme src",
     "doc:commit": "npm run doc && git add docs && (git commit -m 'Generated Docs' || echo 'Docs unchanged')",
     "preversion": "npm run ci && npm run doc:commit && npm run pack",
-    "postversion": "npm publish && git push --no-verify --follow-tags"
+    "postversion": "npm publish --access=public && git push --no-verify --follow-tags"
   },
   "repository": {
     "type": "git",
