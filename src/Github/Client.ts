@@ -38,6 +38,24 @@ export class GithubClient implements IGithubClient {
     } else {
       this.octokit = new OctokitPlugins();
     }
+
+    // octokit.hook.before("request", async options => {
+    //   validate(options);
+    // });
+    // octokit.hook.after("request", async (response, options) => {
+    //   console.log(`${options.method} ${options.url}: ${response.status}`);
+    // });
+    // octokit.hook.error("request", async (error, options) => {
+    //   if (error.status === 304) {
+    //     return findInCache(error.headers.etag);
+    //   }
+
+    //   throw error;
+    // });
+    // octokit.hook.wrap("request", async (request, options) => {
+    //   // add logic before, after, catch errors or replace the request altogether
+    //   return request(options);
+    // });
   }
 
   // public async get(route: string, params?: IGithubRepoParams): Promise<any> {
@@ -88,7 +106,11 @@ export class GithubClient implements IGithubClient {
   }
 
   public async getContents(params?: IGithubRepoContentsParams): Promise<IGithubContents | IGithubContents[]> {
-    return await (await this.octokit.repos.getContents(params)).data;
+    const headers = {
+      'If-None-Match': ''
+    };
+
+    return await (await this.octokit.repos.getContents(Object.assign({}, { headers }, params))).data;
   }
 
   public async createOrUpdateFile(params?: IGithubCreateOrUpdateFileParams): Promise<IGithubCommitResponse> {

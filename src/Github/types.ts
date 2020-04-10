@@ -9,6 +9,7 @@ export interface IGithubProps {
 export interface IGithubParams {
   since?: string;
   per_page?: number;
+  headers?: { [key: string]: string };
 }
 
 export enum GithubRepoVisibility {
