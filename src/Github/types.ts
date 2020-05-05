@@ -1,5 +1,13 @@
 import { Octokit } from '@octokit/rest';
-import { IGithubRepo, IGithubIssue, IGithubPull, IGithubUser, IGithubCommit, IGithubContents } from '.';
+import {
+  IGithubRepo,
+  IGithubIssue,
+  IGithubPull,
+  IGithubUser,
+  IGithubCommit,
+  IGithubCommitStatus,
+  IGithubContents
+} from '.';
 import { IGithubBranch } from './Branch';
 
 export interface IGithubProps {
@@ -113,6 +121,7 @@ export interface IGithubClient {
   user: () => Promise<IGithubUser>;
   repo: (params?: IGithubRepoParams) => Promise<IGithubRepo>;
   repos: (params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
+  statuses: (params?: IGithubRepoRefParams) => Promise<IGithubCommitStatus[]>;
   pull: (params?: IGithubRepoPullParams) => Promise<IGithubPull>;
   pulls: (params?: IGithubRepoParams) => Promise<IGithubPull[]>;
   issue: (params?: IGithubRepoIssueParams) => Promise<IGithubIssue>;
