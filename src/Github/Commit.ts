@@ -1,4 +1,4 @@
-import { IGithubUser, IGithubRepo } from '.';
+import { IGithubUser, IGithubRepo, GithubCommitStatus } from '.';
 
 export interface IGithubCommit {
   sha: string;
@@ -7,4 +7,13 @@ export interface IGithubCommit {
   label?: string;
   user?: IGithubUser;
   repo?: IGithubRepo;
+}
+
+export interface IGithubCommitStatus {
+  id: number;
+  node_id: string;
+  state: GithubCommitStatus;
+  target_url?: string;
+  context?: string;
+  creator?: IGithubUser;
 }

@@ -11,8 +11,10 @@ import {
   IGithubUser,
   IGithubBranch,
   IGithubContents,
+  IGithubCommitStatus,
   IGithubCommitResponse,
   IGithubRepoParams,
+  IGithubRepoRefParams,
   IGithubRepoPullParams,
   IGithubRepoIssueParams,
   IGithubRepoBranchParams,
@@ -68,6 +70,14 @@ export class GithubClient implements IGithubClient {
 
   public async repos(params?: IGithubRepoFilterParams): Promise<IGithubRepo[]> {
     return await this.octokit.paginate('GET /user/repos', params || {});
+  }
+
+  // public async status(params?: IGithubRepoRefParams): Promise<IGithubCommitStatus> {
+  //   return await this.octokit.paginate('GET /repos/:owner/:repo/commits/:ref/status', params || {});
+  // }
+
+  public async statuses(params?: IGithubRepoRefParams): Promise<IGithubCommitStatus[]> {
+    return await this.octokit.paginate('GET /repos/:owner/:repo/commits/:ref/statuses', params || {});
   }
 
   public async pulls(params?: IGithubRepoParams): Promise<IGithubPull[]> {

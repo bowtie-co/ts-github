@@ -38,6 +38,13 @@ export enum GithubFilterDirection {
   desc = 'desc'
 }
 
+export enum GithubCommitStatus {
+  error = 'error',
+  pending = 'pending',
+  failure = 'failure',
+  success = 'success'
+}
+
 export interface IGithubRepoFilterParams {
   visibility?: GithubRepoVisibility;
   affiliation?: string;
@@ -61,6 +68,10 @@ export interface IGithubRepoIssueParams extends IGithubRepoParams {
 
 export interface IGithubRepoBranchParams extends IGithubRepoParams {
   branch: string;
+}
+
+export interface IGithubRepoRefParams extends IGithubRepoParams {
+  ref: string;
 }
 
 export interface IGithubRepoContentsParams extends IGithubRepoParams {
