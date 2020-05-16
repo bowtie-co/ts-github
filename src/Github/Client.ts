@@ -13,6 +13,7 @@ import {
   IGithubContents,
   IGithubCommitStatus,
   IGithubCommitResponse,
+  IGithubOrgParams,
   IGithubRepoParams,
   IGithubRepoRefParams,
   IGithubRepoPullParams,
@@ -98,6 +99,10 @@ export class GithubClient implements IGithubClient {
 
   public async contributors(params?: IGithubRepoParams): Promise<IGithubUser[]> {
     return await this.octokit.paginate('GET /repos/:owner/:repo/contributors', params || {});
+  }
+
+  public async blockedUsers(params?: IGithubOrgParams): Promise<IGithubUser[]> {
+    return await this.octokit.paginate('GET /orgs/:org/blocks', params || {});
   }
 
   public async repo(params?: IGithubRepoParams): Promise<IGithubRepo> {
