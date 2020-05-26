@@ -66,6 +66,10 @@ export interface IGithubRepoParams extends IGithubParams {
   repo: string;
 }
 
+export interface IGithubOrgParams extends IGithubParams {
+  org: string;
+}
+
 export interface IGithubRepoPullParams extends IGithubRepoParams {
   pull_number: number;
 }
