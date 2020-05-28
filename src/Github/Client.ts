@@ -105,6 +105,10 @@ export class GithubClient implements IGithubClient {
     return await this.octokit.paginate('GET /orgs/:org/blocks', params || {});
   }
 
+  public async orgMembers(params?: IGithubOrgParams): Promise<IGithubUser[]> {
+    return await this.octokit.paginate('GET /orgs/:org/members', params || {});
+  }
+
   public async repo(params?: IGithubRepoParams): Promise<IGithubRepo> {
     return await (await this.octokit.repos.get(params)).data;
   }

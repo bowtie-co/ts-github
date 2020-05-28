@@ -134,6 +134,8 @@ export interface IGithubClient {
   branches: (params?: IGithubRepoParams) => Promise<IGithubBranch[]>;
   collaborators: (params?: IGithubRepoParams) => Promise<IGithubUser[]>;
   contributors: (params?: IGithubRepoParams) => Promise<IGithubUser[]>;
+  blockedUsers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
+  orgMembers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
 
   getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;
   createOrUpdateFile: (params?: IGithubCreateOrUpdateFileParams) => Promise<IGithubCommitResponse>;
