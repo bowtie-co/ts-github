@@ -90,6 +90,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#blockedusers" class="tsd-kind-icon">blockedUsers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#branch" class="tsd-kind-icon">branch</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#branches" class="tsd-kind-icon">branches</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#collaborators" class="tsd-kind-icon">collaborators</a></li>
@@ -101,6 +102,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#issue" class="tsd-kind-icon">issue</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#issues" class="tsd-kind-icon">issues</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#octokit" class="tsd-kind-icon">octokit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#orgmembers" class="tsd-kind-icon">orgMembers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#pull" class="tsd-kind-icon">pull</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#pulls" class="tsd-kind-icon">pulls</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubclient.html#repo" class="tsd-kind-icon">repo</a></li>
@@ -114,6 +116,37 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="blockedusers" class="tsd-anchor"></a>
+					<h3>blocked<wbr>Users</h3>
+					<div class="tsd-signature tsd-kind-icon">blocked<wbr>Users<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Github/types.ts:137</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="igithuborgparams.html" class="tsd-signature-type">IGithubOrgParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="igithubuser.html" class="tsd-signature-type">IGithubUser</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="igithuborgparams.html" class="tsd-signature-type">IGithubOrgParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="igithubuser.html" class="tsd-signature-type">IGithubUser</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="branch" class="tsd-anchor"></a>
 					<h3>branch</h3>
@@ -244,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">create<wbr>OrUpdate<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Github/types.ts:139</li>
+							<li>Defined in Github/types.ts:141</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -285,7 +318,7 @@
 					<div class="tsd-signature tsd-kind-icon">delete<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Github/types.ts:140</li>
+							<li>Defined in Github/types.ts:142</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -316,7 +349,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Contents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Github/types.ts:138</li>
+							<li>Defined in Github/types.ts:140</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -412,6 +445,37 @@
 							<li>Defined in Github/types.ts:122</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="orgmembers" class="tsd-anchor"></a>
+					<h3>org<wbr>Members</h3>
+					<div class="tsd-signature tsd-kind-icon">org<wbr>Members<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Github/types.ts:138</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="igithuborgparams.html" class="tsd-signature-type">IGithubOrgParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="igithubuser.html" class="tsd-signature-type">IGithubUser</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="igithuborgparams.html" class="tsd-signature-type">IGithubOrgParams</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="igithubuser.html" class="tsd-signature-type">IGithubUser</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="pull" class="tsd-anchor"></a>
@@ -629,6 +693,9 @@
 						<a href="igithubclient.html" class="tsd-kind-icon">IGithub<wbr>Client</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="igithubclient.html#blockedusers" class="tsd-kind-icon">blocked<wbr>Users</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="igithubclient.html#branch" class="tsd-kind-icon">branch</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -660,6 +727,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="igithubclient.html#octokit" class="tsd-kind-icon">octokit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="igithubclient.html#orgmembers" class="tsd-kind-icon">org<wbr>Members</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="igithubclient.html#pull" class="tsd-kind-icon">pull</a>
