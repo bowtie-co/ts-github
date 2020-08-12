@@ -3,6 +3,7 @@ import { requestLog } from '@octokit/plugin-request-log';
 import { paginateRest } from '@octokit/plugin-paginate-rest';
 import { restEndpointMethods } from '@octokit/plugin-rest-endpoint-methods';
 import {
+  // interfaces
   IGithubClient,
   IGithubProps,
   IGithubRepo,
@@ -13,6 +14,7 @@ import {
   IGithubContents,
   IGithubCommitStatus,
   IGithubCommitResponse,
+  IGithubCommitStatusSummary,
   IGithubOrgParams,
   IGithubRepoParams,
   IGithubRepoRefParams,
@@ -22,7 +24,9 @@ import {
   IGithubRepoFilterParams,
   IGithubDeleteFileParams,
   IGithubRepoContentsParams,
-  IGithubCreateOrUpdateFileParams
+  IGithubCreateOrUpdateFileParams,
+  // enums
+  GithubCommitStatusGroup
 } from '.';
 
 // https://github.com/octokit/plugin-rest-endpoint-methods.js/blob/master/docs/pulls/updateBranch.md
@@ -65,6 +69,21 @@ export class GithubClient implements IGithubClient {
   //   return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
   // }
 
+  public async sumStatuses(params?: IGithubRepoRefParams): Promise<IGithubCommitStatusSummary> {
+    const result: IGithubCommitStatusSummary = {};
+    const statuses: IGithubCommitStatus[] = await this.statuses(params);
+
+    for (const group in GithubCommitStatusGroup) {
+      const groupStatus = statuses.find((status) => status.context && status.context.toLowerCase().includes(group));
+
+      if (groupStatus) {
+        result[group] = groupStatus;
+      }
+    }
+
+    return result;
+  }
+
   public async iterateRepos(
     onPage: (repos: IGithubRepo[]) => void,
     params?: IGithubRepoFilterParams
@@ -76,7 +95,7 @@ export class GithubClient implements IGithubClient {
       allRepos = allRepos.concat(response.data);
     }
 
-    return Promise.resolve(allRepos);
+    return allRepos;
   }
 
   public async user(): Promise<IGithubUser> {

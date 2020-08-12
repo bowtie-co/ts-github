@@ -53,6 +53,15 @@ export enum GithubCommitStatus {
   success = 'success'
 }
 
+export enum GithubCommitStatusGroup {
+  build = 'build',
+  deploy = 'deploy'
+}
+
+export interface IGithubCommitStatusSummary {
+  [group: string]: IGithubCommitStatus;
+}
+
 export interface IGithubRepoFilterParams {
   visibility?: GithubRepoVisibility;
   affiliation?: string;
@@ -137,7 +146,7 @@ export interface IGithubClient {
   blockedUsers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
   orgMembers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
 
-  // Iterator methods (response?)
+  sumStatuses: (params?: IGithubRepoRefParams) => Promise<IGithubCommitStatusSummary>;
   iterateRepos: (onPage: (repos: IGithubRepo[]) => void, params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
 
   getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;

@@ -16,4 +16,5 @@ export interface IGithubCommitStatus {
   target_url?: string;
   context?: string;
   creator?: IGithubUser;
+  description?: string;
 }
