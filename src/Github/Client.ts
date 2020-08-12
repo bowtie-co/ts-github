@@ -65,6 +65,20 @@ export class GithubClient implements IGithubClient {
   //   return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
   // }
 
+  public async iterateRepos(
+    onPage: (repos: IGithubRepo[]) => void,
+    params?: IGithubRepoFilterParams
+  ): Promise<IGithubRepo[]> {
+    let allRepos: IGithubRepo[] = [];
+
+    for await (const response of this.octokit.paginate.iterator<IGithubRepo>('GET /user/repos', params)) {
+      onPage(response.data);
+      allRepos = allRepos.concat(response.data);
+    }
+
+    return Promise.resolve(allRepos);
+  }
+
   public async user(): Promise<IGithubUser> {
     return await (await this.octokit.users.getAuthenticated()).data;
   }

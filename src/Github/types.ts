@@ -137,6 +137,9 @@ export interface IGithubClient {
   blockedUsers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
   orgMembers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
 
+  // Iterator methods (response?)
+  iterateRepos: (onPage: (repos: IGithubRepo[]) => void, params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
+
   getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;
   createOrUpdateFile: (params?: IGithubCreateOrUpdateFileParams) => Promise<IGithubCommitResponse>;
   deleteFile: (params?: IGithubDeleteFileParams) => Promise<IGithubCommitResponse>;
