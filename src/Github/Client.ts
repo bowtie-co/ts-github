@@ -24,6 +24,7 @@ import {
   IGithubRepoFilterParams,
   IGithubDeleteFileParams,
   IGithubRepoContentsParams,
+  IGithubStatusSummaryParams,
   IGithubCreateOrUpdateFileParams,
   // enums
   GithubCommitStatusGroup
@@ -69,14 +70,14 @@ export class GithubClient implements IGithubClient {
   //   return await this.octokit.paginate(`GET /repos/:owner/:repo/${route}`, params || {});
   // }
 
-  public async sumStatuses(params?: IGithubRepoRefParams): Promise<IGithubCommitStatusSummary> {
+  public async sumStatuses(params?: IGithubStatusSummaryParams): Promise<IGithubCommitStatusSummary> {
     const result: IGithubCommitStatusSummary = {};
     const statuses: IGithubCommitStatus[] = await this.statuses(params);
 
     for (const group in GithubCommitStatusGroup) {
       const groupStatus = statuses.find((status) => status.context && status.context.toLowerCase().includes(group));
 
-      if (groupStatus) {
+      if (groupStatus && (!params?.only || params.only === groupStatus.state)) {
         result[group] = groupStatus;
       }
     }

@@ -95,6 +95,10 @@ export interface IGithubRepoRefParams extends IGithubRepoParams {
   ref: string;
 }
 
+export interface IGithubStatusSummaryParams extends IGithubRepoRefParams {
+  only?: GithubCommitStatus;
+}
+
 export interface IGithubRepoContentsParams extends IGithubRepoParams {
   path: string;
 }
@@ -146,7 +150,7 @@ export interface IGithubClient {
   blockedUsers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
   orgMembers: (params?: IGithubOrgParams) => Promise<IGithubUser[]>;
 
-  sumStatuses: (params?: IGithubRepoRefParams) => Promise<IGithubCommitStatusSummary>;
+  sumStatuses: (params?: IGithubStatusSummaryParams) => Promise<IGithubCommitStatusSummary>;
   iterateRepos: (onPage: (repos: IGithubRepo[]) => void, params?: IGithubRepoFilterParams) => Promise<IGithubRepo[]>;
 
   getContents: (params?: IGithubRepoContentsParams) => Promise<IGithubContents | IGithubContents[]>;
