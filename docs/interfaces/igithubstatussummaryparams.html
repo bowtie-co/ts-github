@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IGithubRepoPullParams | @bowtie/ts-github</title>
+	<title>IGithubStatusSummaryParams | @bowtie/ts-github</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -51,7 +51,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="igithubrepopullparams.html">IGithubRepoPullParams</a>
+					<a href="igithubstatussummaryparams.html">IGithubStatusSummaryParams</a>
 				</li>
 			</ul>
 		</div>
@@ -69,15 +69,15 @@
 			</nav>
 		</div>
 		<div class="col-7 offset-3 col-content">
-			<h1>Interface IGithubRepoPullParams</h1>
+			<h1>Interface IGithubStatusSummaryParams</h1>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="igithubrepoparams.html" class="tsd-signature-type">IGithubRepoParams</a>
+						<a href="igithubreporefparams.html" class="tsd-signature-type">IGithubRepoRefParams</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">IGithubRepoPullParams</span>
+								<span class="target">IGithubStatusSummaryParams</span>
 							</li>
 						</ul>
 					</li>
@@ -89,12 +89,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepopullparams.html#headers" class="tsd-kind-icon">headers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepopullparams.html#owner" class="tsd-kind-icon">owner</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepopullparams.html#per_page" class="tsd-kind-icon">per_page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubrepopullparams.html#pull_number" class="tsd-kind-icon">pull_number</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepopullparams.html#repo" class="tsd-kind-icon">repo</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubrepopullparams.html#since" class="tsd-kind-icon">since</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubstatussummaryparams.html#headers" class="tsd-kind-icon">headers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igithubstatussummaryparams.html#only" class="tsd-kind-icon">only</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubstatussummaryparams.html#owner" class="tsd-kind-icon">owner</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubstatussummaryparams.html#per_page" class="tsd-kind-icon">per_page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubstatussummaryparams.html#ref" class="tsd-kind-icon">ref</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubstatussummaryparams.html#repo" class="tsd-kind-icon">repo</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="igithubstatussummaryparams.html#since" class="tsd-kind-icon">since</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,6 +111,16 @@
 						<p>Inherited from <a href="igithubparams.html">IGithubParams</a>.<a href="igithubparams.html#headers">headers</a></p>
 						<ul>
 							<li>Defined in Github/types.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="only" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> only</h3>
+					<div class="tsd-signature tsd-kind-icon">only<span class="tsd-signature-symbol">:</span> <a href="../enums/githubcommitstatus.html" class="tsd-signature-type">GithubCommitStatus</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Github/types.ts:99</li>
 						</ul>
 					</aside>
 				</section>
@@ -135,13 +146,14 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="pull_number" class="tsd-anchor"></a>
-					<h3>pull_<wbr>number</h3>
-					<div class="tsd-signature tsd-kind-icon">pull_<wbr>number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="ref" class="tsd-anchor"></a>
+					<h3>ref</h3>
+					<div class="tsd-signature tsd-kind-icon">ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="igithubreporefparams.html">IGithubRepoRefParams</a>.<a href="igithubreporefparams.html#ref">ref</a></p>
 						<ul>
-							<li>Defined in Github/types.ts:83</li>
+							<li>Defined in Github/types.ts:95</li>
 						</ul>
 					</aside>
 				</section>
@@ -275,39 +287,42 @@
 					<li class=" tsd-kind-interface root">
 						<a href="igithubrepoparams.html" class="tsd-kind-icon">IGithub<wbr>Repo<wbr>Params</a>
 					</li>
+					<li class=" tsd-kind-interface root">
+						<a href="igithubrepopullparams.html" class="tsd-kind-icon">IGithub<wbr>Repo<wbr>Pull<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface root">
+						<a href="igithubreporefparams.html" class="tsd-kind-icon">IGithub<wbr>Repo<wbr>Ref<wbr>Params</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface root">
-						<a href="igithubrepopullparams.html" class="tsd-kind-icon">IGithub<wbr>Repo<wbr>Pull<wbr>Params</a>
+						<a href="igithubstatussummaryparams.html" class="tsd-kind-icon">IGithub<wbr>Status<wbr>Summary<wbr>Params</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="igithubrepopullparams.html#headers" class="tsd-kind-icon">headers</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="igithubrepopullparams.html#owner" class="tsd-kind-icon">owner</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="igithubrepopullparams.html#per_page" class="tsd-kind-icon">per_<wbr>page</a>
+								<a href="igithubstatussummaryparams.html#headers" class="tsd-kind-icon">headers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igithubrepopullparams.html#pull_number" class="tsd-kind-icon">pull_<wbr>number</a>
+								<a href="igithubstatussummaryparams.html#only" class="tsd-kind-icon">only</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="igithubrepopullparams.html#repo" class="tsd-kind-icon">repo</a>
+								<a href="igithubstatussummaryparams.html#owner" class="tsd-kind-icon">owner</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="igithubrepopullparams.html#since" class="tsd-kind-icon">since</a>
+								<a href="igithubstatussummaryparams.html#per_page" class="tsd-kind-icon">per_<wbr>page</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubstatussummaryparams.html#ref" class="tsd-kind-icon">ref</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubstatussummaryparams.html#repo" class="tsd-kind-icon">repo</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="igithubstatussummaryparams.html#since" class="tsd-kind-icon">since</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface root">
-						<a href="igithubreporefparams.html" class="tsd-kind-icon">IGithub<wbr>Repo<wbr>Ref<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface root">
-						<a href="igithubstatussummaryparams.html" class="tsd-kind-icon">IGithub<wbr>Status<wbr>Summary<wbr>Params</a>
-					</li>
 					<li class=" tsd-kind-interface root">
 						<a href="igithubuser.html" class="tsd-kind-icon">IGithub<wbr>User</a>
 					</li>
