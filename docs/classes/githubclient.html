@@ -113,6 +113,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#getcontents" class="tsd-kind-icon">getContents</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#issue" class="tsd-kind-icon">issue</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#issues" class="tsd-kind-icon">issues</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#iteraterepos" class="tsd-kind-icon">iterateRepos</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#orgmembers" class="tsd-kind-icon">orgMembers</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#pull" class="tsd-kind-icon">pull</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="githubclient.html#pulls" class="tsd-kind-icon">pulls</a></li>
@@ -200,7 +201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:104</li>
+									<li>Defined in Github/Client.ts:118</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -223,7 +224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:123</li>
+									<li>Defined in Github/Client.ts:137</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -246,7 +247,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:92</li>
+									<li>Defined in Github/Client.ts:106</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -269,7 +270,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:96</li>
+									<li>Defined in Github/Client.ts:110</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -292,7 +293,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:100</li>
+									<li>Defined in Github/Client.ts:114</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -315,7 +316,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:135</li>
+									<li>Defined in Github/Client.ts:149</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -338,7 +339,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:139</li>
+									<li>Defined in Github/Client.ts:153</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -361,7 +362,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:127</li>
+									<li>Defined in Github/Client.ts:141</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -384,7 +385,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:119</li>
+									<li>Defined in Github/Client.ts:133</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -407,7 +408,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:88</li>
+									<li>Defined in Github/Client.ts:102</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -421,6 +422,50 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iteraterepos" class="tsd-anchor"></a>
+					<h3>iterate<wbr>Repos</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">iterate<wbr>Repos<span class="tsd-signature-symbol">(</span>onPage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/igithubrepofilterparams.html" class="tsd-signature-type">IGithubRepoFilterParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/igithubrepo.html" class="tsd-signature-type">IGithubRepo</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in Github/Client.ts:68</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>onPage: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>repos<span class="tsd-signature-symbol">: </span><a href="../interfaces/igithubrepo.html" class="tsd-signature-type">IGithubRepo</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>repos: <a href="../interfaces/igithubrepo.html" class="tsd-signature-type">IGithubRepo</a><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/igithubrepofilterparams.html" class="tsd-signature-type">IGithubRepoFilterParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/igithubrepo.html" class="tsd-signature-type">IGithubRepo</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="orgmembers" class="tsd-anchor"></a>
 					<h3>org<wbr>Members</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -430,7 +475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:108</li>
+									<li>Defined in Github/Client.ts:122</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -453,7 +498,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:116</li>
+									<li>Defined in Github/Client.ts:130</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -476,7 +521,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:84</li>
+									<li>Defined in Github/Client.ts:98</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -499,7 +544,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:112</li>
+									<li>Defined in Github/Client.ts:126</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -522,7 +567,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:72</li>
+									<li>Defined in Github/Client.ts:86</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -545,7 +590,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:80</li>
+									<li>Defined in Github/Client.ts:94</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -568,7 +613,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Github/Client.ts:68</li>
+									<li>Defined in Github/Client.ts:82</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/igithubuser.html" class="tsd-signature-type">IGithubUser</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -639,6 +684,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="githubclient.html#issues" class="tsd-kind-icon">issues</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="githubclient.html#iteraterepos" class="tsd-kind-icon">iterate<wbr>Repos</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="githubclient.html#orgmembers" class="tsd-kind-icon">org<wbr>Members</a>
