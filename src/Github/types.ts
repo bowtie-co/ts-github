@@ -68,6 +68,7 @@ export interface IGithubRepoFilterParams {
   type?: GithubRepoType;
   sort?: GithubFilterSort;
   direction?: GithubFilterDirection;
+  per_page?: number | string;
 }
 
 export interface IGithubRepoParams extends IGithubParams {
