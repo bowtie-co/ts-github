@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- '12'
+- '10'
+before_script:
+- "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o ./cc-test-reporter"
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+script:
+- npm run ci
+after_script:
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+cache:
+  directories:
+  - node_modules
+git:
+  depth: 1
+env:
+  global:
+    secure: Pc/n+P3xGGG2wXgrL6xiTWJXSPLB7dkvMgHrxnx1wHbuqKDTwr1SeQEzIteRJ31Sfolk2/jCmddiHXPeejx0ERkv6fBcSr2NyXfGnk8GtyvFiJEC70dak6kWvOazzr2HIA8so2Bi6Px2z4XgeOi3MfBTEXZzO0Bn6hLL92oCSoY88RhTGkZPJZ8aw0YU65NBBXGAQvdZEJ0L1Tvwo3TsEvWu4PUBNLfdqCbG7n+ul0disqe8JcTy9DjBxvH36pXEvALPtTm9o9KI07Ai4OeOPAvyUZT3lsdrziBDpsDQKTM4Zy1u6WWFUD9qIqmdZWUKHutP3yGShPr73wmLs2nzuT83/AyIadkvLlUCCNfhj2Ct319L41qyO3MWTIlDFSvUi0+AfarrW1rMbWUmpi+rKH3KZ0JAvUbXZEqvSMTTZNK3E2wCzdXlimvjUezRPETuhOQPVGVaRAKQKrZ/HsALa3kui+Rf6uUDJS4NvZ562M/z97w2WJs/gGr77pChfQV8nsCVnJjVUGwDpW91HHyt15mx/z2gtq0o7glrPh0ruEN9oSMm58kyXiWcGbr0xYbVFpJ1L0yOIyujTMnZCmMAJHWBVo7ndzEXq1ZZ9LtmmSgJMhg+ERJdHO53T5eM99WwXQFuybKpa9IpGJp/GXDdrFi6gXwWK9gMMVG189hfx5g=
